@@ -1,0 +1,8 @@
+@use "../../styles/colors" as *;
+
+.wrapper {
+  background-color: $dark-gray;
+  color: #fff;
+  width: 100%;
+  height: 90vh;
+}
