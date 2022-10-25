@@ -11,7 +11,7 @@ import styles from "./ScrollSideways.module.scss";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 const ScrollSideways: FunctionComponent<ScrollSidewaysProps> = (props) => {
-  const { children, offset = 50, isEffectActive } = props;
+  const { children, offset = 50, isEffectActive, direction } = props;
   const prefersReducedMotion = useReducedMotion();
   const [elementTop, setElementTop] = useState(0);
   const [clientHeight, setClientHeight] = useState(0);
@@ -21,9 +21,16 @@ const ScrollSideways: FunctionComponent<ScrollSidewaysProps> = (props) => {
 
   const initial = elementTop - clientHeight;
   const final = elementTop + offset;
+  const calcInitial = initial >= 0 ? initial : 0;
 
-  const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
-  const y = useSpring(yRange, { stiffness: 400, damping: 90 });
+  const directionValue = direction === "left" ? -1 : 1;
+
+  const yRange = useTransform(
+    scrollY,
+    [calcInitial, final],
+    [0, offset * directionValue]
+  );
+  const x = useSpring(yRange, { stiffness: 400, damping: 90 });
 
   useIsomorphicLayoutEffect(() => {
     const element = ref.current;
@@ -44,7 +51,7 @@ const ScrollSideways: FunctionComponent<ScrollSidewaysProps> = (props) => {
   }
 
   return (
-    <motion.div className={styles.parallax_wrapper} ref={ref} style={{ y }}>
+    <motion.div className={styles.parallax_wrapper} ref={ref} style={{ x: x }}>
       {children}
     </motion.div>
   );

@@ -6,7 +6,7 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      {children}
     </>
   );
 };

@@ -1,13 +1,18 @@
 import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
+import styles from "./Header.module.scss";
 
 const Header: FunctionComponent = () => {
   return (
-    <header>
+    <header className={styles.wrapper}>
       Logo
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/contact">Contact</Link>
+      <nav className={styles.navigation}>
+        <Link to="/" className={styles.menuLink}>
+          Home
+        </Link>
+        <Link to="/contact" className={styles.menuLink}>
+          Contact
+        </Link>
       </nav>
     </header>
   );

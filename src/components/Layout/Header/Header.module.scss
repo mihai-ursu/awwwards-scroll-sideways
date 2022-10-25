@@ -1,0 +1,21 @@
+@use "../../../styles/colors" as *;
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: $white;
+}
+
+.menuLink {
+  color: $white;
+}
