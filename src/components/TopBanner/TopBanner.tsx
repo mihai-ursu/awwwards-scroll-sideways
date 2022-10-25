@@ -8,8 +8,8 @@ const TopBanner: FunctionComponent = () => {
       <ScrollSideways
         direction="right"
         isEffectActive={true}
-        offset={150}
-        initialOffset={-150}
+        offset={50}
+        initialX={-150}
       >
         <h1 className={styles.topBannerHeadline}>TopBanner</h1>
       </ScrollSideways>

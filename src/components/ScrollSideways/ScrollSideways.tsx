@@ -15,7 +15,7 @@ const ScrollSideways: FunctionComponent<ScrollSidewaysProps> = (props) => {
     offset = 50,
     isEffectActive,
     direction,
-    initialOffset = 0,
+    initialX = 0,
   } = props;
   const prefersReducedMotion = useReducedMotion();
   const [elementTop, setElementTop] = useState(0);
@@ -24,16 +24,15 @@ const ScrollSideways: FunctionComponent<ScrollSidewaysProps> = (props) => {
 
   const { scrollY } = useScroll();
 
-  const initial = elementTop - clientHeight;
-  const calcInitial = initial >= 0 ? initial : 0;
+  const initial = Math.max(elementTop - clientHeight, 0);
   const final = elementTop + offset;
 
   const directionValue = direction === "left" ? -1 : 1;
 
   const xRange = useTransform(
     scrollY,
-    [calcInitial, final],
-    [initialOffset, offset * directionValue]
+    [initial, final],
+    [initialX, offset * directionValue]
   );
   const x = useSpring(xRange, { stiffness: 400, damping: 90 });
 
@@ -56,7 +55,7 @@ const ScrollSideways: FunctionComponent<ScrollSidewaysProps> = (props) => {
   }
 
   return (
-    <motion.div ref={ref} style={{ x: x }}>
+    <motion.div initial={{ x: initialX }} ref={ref} style={{ x: x }}>
       {children}
     </motion.div>
   );
