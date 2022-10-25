@@ -3,4 +3,5 @@ export default interface ScrollSidewaysProps {
   offset?: number;
   isEffectActive?: boolean;
   direction: "left" | "right";
+  initialOffset?: number;
 }
