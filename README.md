@@ -1,3 +1,3 @@
-## A scroll sideways effect for text
+## A scroll sideways effect
 
 Uses React (Vite) + TypeScript + Framer Motion
