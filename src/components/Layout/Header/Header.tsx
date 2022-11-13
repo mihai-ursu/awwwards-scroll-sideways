@@ -10,9 +10,6 @@ const Header: FunctionComponent = () => {
         <Link to="/" className={styles.menuLink}>
           Home
         </Link>
-        <Link to="/contact" className={styles.menuLink}>
-          Contact
-        </Link>
       </nav>
     </header>
   );
