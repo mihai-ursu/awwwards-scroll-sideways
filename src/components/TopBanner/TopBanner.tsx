@@ -11,16 +11,16 @@ const TopBanner: FunctionComponent = () => {
         offset={50}
         initialX={-150}
       >
-        <h1 className={styles.topBannerHeadline}>TopBanner</h1>
+        <h1 className={styles.topBannerHeadline}>Basketball</h1>
       </ScrollSideways>
       <ScrollSideways direction="left" isEffectActive={true} offset={150}>
-        <h1 className={styles.topBannerHeadline}>Test</h1>
+        <h1 className={styles.topBannerHeadline}>Is King</h1>
       </ScrollSideways>
       <ScrollSideways
         cssClass={styles.imageWrapper}
         direction="left"
         isEffectActive={true}
-        offset={230}
+        offset={100}
       >
         <img
           src="./guy-with-basketball.jpg"
