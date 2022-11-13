@@ -10,6 +10,7 @@ const ScrollSideways: FunctionComponent<ScrollSidewaysProps> = (props) => {
     isEffectActive,
     direction,
     initialX = 0,
+    cssClass,
   } = props;
   const prefersReducedMotion = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
@@ -21,7 +22,12 @@ const ScrollSideways: FunctionComponent<ScrollSidewaysProps> = (props) => {
   }
 
   return (
-    <motion.div initial={{ x: initialX }} ref={ref} style={{ x: x }}>
+    <motion.div
+      className={cssClass}
+      initial={{ x: initialX }}
+      ref={ref}
+      style={{ x: x }}
+    >
       {children}
     </motion.div>
   );

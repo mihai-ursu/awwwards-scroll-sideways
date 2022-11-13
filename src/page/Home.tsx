@@ -7,7 +7,6 @@ const Home: FunctionComponent = () => {
   return (
     <Layout>
       <main>
-        {/* <div className={styles.space} /> */}
         <TopBanner />
         <div className={styles.space} />
       </main>

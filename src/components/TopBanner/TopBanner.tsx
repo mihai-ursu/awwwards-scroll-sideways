@@ -16,6 +16,18 @@ const TopBanner: FunctionComponent = () => {
       <ScrollSideways direction="left" isEffectActive={true} offset={150}>
         <h1 className={styles.topBannerHeadline}>Test</h1>
       </ScrollSideways>
+      <ScrollSideways
+        cssClass={styles.imageWrapper}
+        direction="left"
+        isEffectActive={true}
+        offset={230}
+      >
+        <img
+          src="./guy-with-basketball.jpg"
+          alt="Guy with basketball"
+          className={styles.image}
+        />
+      </ScrollSideways>
     </div>
   );
 };
