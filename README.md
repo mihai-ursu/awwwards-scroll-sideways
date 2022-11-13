@@ -1,4 +1,4 @@
-![Scroll sideways effect preview.](https://fluid-react.vercel.app/images/scroll-sideways-thumbnail.jpg)
+[![Scroll sideways effect preview.](https://fluid-react.vercel.app/images/scroll-sideways-thumbnail.jpg)](https://scroll-sideways-effect.vercel.app/)
 
 ## Scroll sideways effect
 
